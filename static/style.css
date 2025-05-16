@@ -24,7 +24,7 @@ form  input{
     border-radius: 15px ;
 }
 
-button {
+.botonsend {
     padding: 10px;
     background-color:coral;
     margin-top: 15px;
@@ -33,4 +33,25 @@ button {
     color: white;
     cursor: pointer;
     
+    
+}
+
+table, th {
+    margin-top: 10px;
+    border: 2px solid black;
+}
+
+.delete {
+    padding: 10px;
+    background-color:coral;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+
+a {
+    text-decoration: none;
 }
