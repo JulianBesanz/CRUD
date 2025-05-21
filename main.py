@@ -31,8 +31,30 @@ def crud():
 
     return render_template("registro.html", usuarios=usuarios) # lista que entregamos al html
 
+@app.route("/update/<int:id>", methods=["GET", "POST"]) #Ruta  con parametros 
+def update(id):
+
+    estudiante_a_editar='' 
+     #TODO: indentificar el diccionario del usuario con id entregad
+    for diccionario in usuarios:
+        if diccionario['id']==id:
+            estudiante_a_editar=diccionario
+            print("el estudiante a editar  es:", estudiante_a_editar)
+            break
+
+    if request.method=='POST':
+            #TODO: actualizar el diccionario dle estudiantes con los datos del formulario
+            estudiante_a_editar['username']=request.form.get('username')
+            estudiante_a_editar['email']=request.form.get('email')
+            return redirect(url_for('crud'))
 
 
+            return redirect(url_for("crud"))     
+    #si despues de recorrer ttoda la lista, no encontramos el id entregado 
+    if estudiante_a_editar=='':
+        return f"no exsite el usuario con id: {id}" #Salgo de la funcion
+                   
+    return render_template("editar.html",estudiante_a_editar=estudiante_a_editar)
 
 if  __name__ == "__main__":
     app.run(debug=True)

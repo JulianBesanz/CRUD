@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(186, 180, 180, 0.48);
+    background-color:black;
     margin: 0;
     display: flex;
     align-items: center;
@@ -9,7 +9,7 @@ body {
 }
 
 .section {
-    background-color: white;
+    background-color: beige;
     padding: 100px;
     border-radius: 50px ;
     box-shadow: 50px 30px 20px greenyellow;
@@ -54,4 +54,6 @@ table, th {
 
 a {
     text-decoration: none;
+    color: white;
+    
 }
